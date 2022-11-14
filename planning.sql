@@ -49,13 +49,9 @@ CREATE TABLE `ecole` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `matiereprof`
+
 --
 
-CREATE TABLE `matiereprof` (
-  `id_prof` int(11) NOT NULL,
-  `id_matiere` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -102,11 +98,8 @@ ALTER TABLE `ecole`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Index pour la table `matiereprof`
+
 --
-ALTER TABLE `matiereprof`
-  ADD KEY `id_matiere` (`id_matiere`),
-  ADD KEY `id_prof` (`id_prof`);
 
 --
 -- Index pour la table `matieres`
@@ -162,11 +155,9 @@ ALTER TABLE `classes`
   ADD CONSTRAINT `classes_ibfk_2` FOREIGN KEY (`id_prof`) REFERENCES `prof` (`ID`);
 
 --
--- Contraintes pour la table `matiereprof`
+
 --
-ALTER TABLE `matiereprof`
-  ADD CONSTRAINT `matiereprof_ibfk_1` FOREIGN KEY (`id_prof`) REFERENCES `prof` (`ID`),
-  ADD CONSTRAINT `matiereprof_ibfk_2` FOREIGN KEY (`id_matiere`) REFERENCES `matieres` (`ID`);
+
 
 --
 -- Contraintes pour la table `prof`
